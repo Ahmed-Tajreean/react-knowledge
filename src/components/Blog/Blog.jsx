@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { PiBookmarkSimple } from "react-icons/pi";
 
 const Blog = ({ blog, handleBookmarks, handleReadingTime }) => {
-    const { cover, title, author_img, author, posted_date, reading_time, hashtags } = blog
+    const { id, cover, title, author_img, author, posted_date, reading_time, hashtags } = blog
     return (
         <div className='mb-20 space-y-4'>
 
@@ -26,7 +26,7 @@ const Blog = ({ blog, handleBookmarks, handleReadingTime }) => {
                     hashtags.map((hash, idx) => <span key={idx}><a className='mr-4' href="">#{hash}</a></span>)
                 }
             </p>
-            <button onClick={() => handleReadingTime(reading_time)} className='font-bold'>Mark as Read</button>
+            <button onClick={() => handleReadingTime(id, reading_time)} className='font-bold'>Mark as Read</button>
         </div>
     );
 };
